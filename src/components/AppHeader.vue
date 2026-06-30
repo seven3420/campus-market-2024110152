@@ -17,7 +17,7 @@
         </el-badge>
       </router-link>
       <router-link to="/user" class="action-btn user-btn">
-        <el-avatar :size="32" style="background: #2563eb; font-size: 16px">
+        <el-avatar :size="32" style="background: #5b9bd5; font-size: 16px">
           {{ userAvatar }}
         </el-avatar>
       </router-link>
@@ -77,7 +77,7 @@ onMounted(async () => {
 .logo-text {
   font-size: 20px;
   font-weight: 700;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  background: linear-gradient(135deg, #5b9bd5, #818cf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

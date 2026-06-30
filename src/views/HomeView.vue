@@ -141,7 +141,7 @@ function toDetail(id: number, type: string) {
 
 /* 欢迎横幅 */
 .hero-banner {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #db2777 100%);
+  background: linear-gradient(135deg, #5b9bd5 0%, #818cf8 50%, #e77c8e 100%);
   border-radius: var(--radius-lg);
   padding: 44px 40px;
   color: #fff;
@@ -198,7 +198,7 @@ function toDetail(id: number, type: string) {
   box-shadow: var(--shadow-lg);
 }
 
-.category-card.trade { background: linear-gradient(135deg, #eff6ff, #dbeafe); }
+.category-card.trade { background: linear-gradient(135deg, #e8f4fd, #d4eafc); }
 .category-card.lost { background: linear-gradient(135deg, #fffbeb, #fef3c7); }
 .category-card.group { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
 .category-card.errand { background: linear-gradient(135deg, #fef2f2, #fecaca); }

@@ -3,7 +3,7 @@
     <!-- 个人信息卡片 -->
     <div class="profile-card">
       <div class="profile-main">
-        <el-avatar :size="72" style="background: linear-gradient(135deg, #2563eb, #7c3aed); font-size: 32px">
+        <el-avatar :size="72" style="background: linear-gradient(135deg, #5b9bd5, #818cf8); font-size: 32px">
           {{ user.avatar }}
         </el-avatar>
         <div class="profile-info">

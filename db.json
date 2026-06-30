@@ -77,6 +77,19 @@
       "image": "https://picsum.photos/seed/trade6/400/300",
       "status": "open",
       "description": "买了没时间做，全套正版，赠送听力光盘和网课资料。"
+    },
+    {
+      "title": "鞋子",
+      "category": "鞋类",
+      "price": 200,
+      "condition": "全新",
+      "location": "宿舍",
+      "publisher": "当前用户",
+      "publishTime": "2026-06-30 02:20",
+      "image": "",
+      "status": "open",
+      "description": "全新鞋子，未拆封",
+      "id": "yemW2IYZPhE"
     }
   ],
   "lostFounds": [
@@ -521,6 +534,13 @@
       "text": "你好",
       "time": "2026/6/29 10:53:00",
       "id": "dZnGI9riCjc"
+    },
+    {
+      "conversationId": "1",
+      "senderId": 1,
+      "text": "nihao",
+      "time": "2026/6/30 10:18:24",
+      "id": "v8Er1R73WDU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

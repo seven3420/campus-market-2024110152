@@ -43,7 +43,7 @@
           <div class="category-stats">
             <div class="category-stat-item">
               <span class="cat-label">🛒 二手交易</span>
-              <el-progress :percentage="stats[0] ? Math.round(stats[0].count / totalCount * 100) : 0" :color="'#2563eb'" />
+              <el-progress :percentage="stats[0] ? Math.round(stats[0].count / totalCount * 100) : 0" :color="'#5b9bd5'" />
             </div>
             <div class="category-stat-item">
               <span class="cat-label">🔍 失物招领</span>
@@ -97,7 +97,7 @@ interface LatestItem {
 }
 
 const stats = ref([
-  { icon: '🛒', label: '二手交易', count: 0, bg: 'linear-gradient(135deg, #eff6ff, #dbeafe)' },
+  { icon: '🛒', label: '二手交易', count: 0, bg: 'linear-gradient(135deg, #e8f4fd, #d4eafc)' },
   { icon: '🔍', label: '失物招领', count: 0, bg: 'linear-gradient(135deg, #fffbeb, #fef3c7)' },
   { icon: '👥', label: '拼单搭子', count: 0, bg: 'linear-gradient(135deg, #ecfdf5, #d1fae5)' },
   { icon: '🏃', label: '跑腿委托', count: 0, bg: 'linear-gradient(135deg, #fef2f2, #fecaca)' },

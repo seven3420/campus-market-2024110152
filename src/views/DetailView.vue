@@ -225,7 +225,7 @@ function toggleFavorite() {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+  background: linear-gradient(135deg, #e8f4fd, #ede9fe);
   font-size: 72px;
 }
 

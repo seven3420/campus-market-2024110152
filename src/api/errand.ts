@@ -23,3 +23,8 @@ export function getErrands() {
 export function getErrandById(id: number) {
   return http.get<ErrandItem>(`/errands/${id}`)
 }
+
+/** 新增跑腿委托数据（id 由 JSON Server 自动生成） */
+export function createErrand(data: Omit<ErrandItem, 'id'> & { id?: number }) {
+  return http.post<ErrandItem>('/errands', data)
+}

@@ -1,8 +1,8 @@
 /* ===== CSS 自定义属性（设计令牌） ===== */
 :root {
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #eff6ff;
+  --color-primary: #5b9bd5;
+  --color-primary-dark: #4a8ac4;
+  --color-primary-light: #e8f4fd;
   --color-danger: #e74c3c;
   --color-success: #10b981;
   --color-success-light: #ecfdf5;

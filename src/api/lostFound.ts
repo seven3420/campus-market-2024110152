@@ -22,3 +22,8 @@ export function getLostFounds() {
 export function getLostFoundById(id: number) {
   return http.get<LostFoundItem>(`/lostFounds/${id}`)
 }
+
+/** 新增失物招领数据（id 由 JSON Server 自动生成） */
+export function createLostFound(data: Omit<LostFoundItem, 'id'> & { id?: number }) {
+  return http.post<LostFoundItem>('/lostFounds', data)
+}

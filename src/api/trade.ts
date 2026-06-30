@@ -24,3 +24,8 @@ export function getTrades() {
 export function getTradeById(id: number) {
   return http.get<TradeItem>(`/trades/${id}`)
 }
+
+/** 新增二手交易数据（id 由 JSON Server 自动生成） */
+export function createTrade(data: Omit<TradeItem, 'id'> & { id?: number }) {
+  return http.post<TradeItem>('/trades', data)
+}

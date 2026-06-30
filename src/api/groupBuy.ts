@@ -23,3 +23,8 @@ export function getGroupBuys() {
 export function getGroupBuyById(id: number) {
   return http.get<GroupBuyItem>(`/groupBuys/${id}`)
 }
+
+/** 新增拼单搭子数据（id 由 JSON Server 自动生成） */
+export function createGroupBuy(data: Omit<GroupBuyItem, 'id'> & { id?: number }) {
+  return http.post<GroupBuyItem>('/groupBuys', data)
+}
