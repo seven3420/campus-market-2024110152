@@ -541,6 +541,13 @@
       "text": "nihao",
       "time": "2026/6/30 10:18:24",
       "id": "v8Er1R73WDU"
+    },
+    {
+      "conversationId": "3",
+      "senderId": 1,
+      "text": "o1",
+      "time": "2026/7/1 09:06:11",
+      "id": "KVVjyEYyl9Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

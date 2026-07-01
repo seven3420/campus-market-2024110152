@@ -18,8 +18,9 @@
       </router-link>
       <router-link to="/user" class="action-btn user-btn">
         <el-avatar :size="32" style="background: #5b9bd5; font-size: 16px">
-          {{ userAvatar }}
+          {{ userStore.currentUser.avatar }}
         </el-avatar>
+        <span class="user-name">{{ userStore.displayName }}</span>
       </router-link>
     </div>
   </header>
@@ -29,9 +30,10 @@
 import { ref, onMounted } from 'vue'
 import AppNav from './AppNav.vue'
 import { getConversations } from '@/api/message'
+import { useUserStore } from '@/stores/user'
 
+const userStore = useUserStore()
 const unreadCount = ref(0)
-const userAvatar = ref('🎓')
 
 onMounted(async () => {
   try {
@@ -117,5 +119,14 @@ onMounted(async () => {
 .user-btn {
   width: auto;
   height: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-name {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
 }
 </style>

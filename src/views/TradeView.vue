@@ -24,6 +24,15 @@
           <el-tag size="small" :type="item.condition === '全新' ? 'success' : ''">
             {{ item.condition }}
           </el-tag>
+          <button class="favorite-btn" @click.stop="favoriteStore.toggleFavorite({
+            id: item.id,
+            type: 'trade',
+            title: item.title,
+            description: item.description,
+            location: item.location
+          })">
+            {{ favoriteStore.isFavorite('trade', item.id) ? '❤️ 已收藏' : '🤍 收藏' }}
+          </button>
           <el-tag size="small" :type="item.status === 'open' ? 'success' : 'info'" class="status-tag">
             {{ item.status === 'open' ? '在售' : '已售' }}
           </el-tag>
@@ -39,8 +48,10 @@ import { useRouter } from 'vue-router'
 import ItemCard from '@/components/ItemCard.vue'
 import EmptyState from '@/components/EmptyState.vue'
 import { getTrades, type TradeItem } from '@/api/trade'
+import { useFavoriteStore } from '@/stores/favorite'
 
 const router = useRouter()
+const favoriteStore = useFavoriteStore()
 const trades = ref<TradeItem[]>([])
 
 onMounted(async () => {
@@ -91,6 +102,22 @@ function toDetail(id: number) {
 .price {
   font-size: 18px;
   color: var(--color-danger);
+}
+
+.favorite-btn {
+  margin-left: 6px;
+  border: none;
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 13px;
+  transition: background var(--transition);
+}
+
+.favorite-btn:hover {
+  background: #fee2e2;
 }
 
 .status-tag {
