@@ -310,7 +310,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "student",
       "password": "123456",
       "name": "小王同学",
@@ -320,7 +320,7 @@
       "bio": "热爱校园生活，喜欢分享闲置好物。"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "zhang",
       "password": "123456",
       "name": "爱打球的小张",
@@ -330,7 +330,7 @@
       "bio": "篮球爱好者，偶尔出闲置。"
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "senior",
       "password": "123456",
       "name": "研二学长",
@@ -338,6 +338,16 @@
       "grade": "2024级研",
       "avatar": "📚",
       "bio": "研究生在读，毕业出闲置。"
+    },
+    {
+      "username": "小卓",
+      "password": "123456",
+      "name": "小卓",
+      "college": "计算机科学学院",
+      "grade": "2024级",
+      "avatar": "",
+      "bio": "这个同学还没有填写个人简介。",
+      "id": "CDZiIaFlcuo"
     }
   ],
   "conversations": [

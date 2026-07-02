@@ -1,42 +1,40 @@
 <template>
   <section class="page">
-    <!-- 未登录状态 -->
+    <!-- 个人信息卡片：未登录时提示登录 -->
     <div v-if="!userStore.isLoggedIn" class="panel not-logged-in">
       <div class="empty-icon">🔒</div>
       <h1>请先登录</h1>
-      <p>登录后可以查看个人资料、我的收藏和我的发布。</p>
+      <p>登录后可以查看个人资料和发布信息。</p>
       <RouterLink class="login-link" to="/login">去登录</RouterLink>
     </div>
 
-    <!-- 已登录状态 -->
-    <template v-else>
-      <!-- 个人信息卡片 -->
-      <div class="profile-card">
-        <div class="avatar">
-          {{ userStore.currentUser?.avatar || userStore.displayName.slice(0, 1) }}
-        </div>
+    <!-- 个人信息卡片：已登录时展示资料 -->
+    <div v-else class="profile-card">
+      <div class="avatar">
+        {{ userStore.currentUser?.avatar || userStore.displayName.slice(0, 1) }}
+      </div>
 
-        <div class="profile-info">
-          <h1>{{ userStore.displayName }}</h1>
-          <p class="profile-desc">{{ userStore.userDescription }}</p>
-          <p class="profile-bio">{{ userStore.currentUser?.bio }}</p>
-          <div class="profile-tags">
-            <el-tag size="small">{{ userStore.currentUser?.college }}</el-tag>
-            <el-tag size="small" type="info">{{ userStore.currentUser?.grade }}</el-tag>
-          </div>
+      <div class="profile-info">
+        <h1>{{ userStore.displayName }}</h1>
+        <p class="profile-desc">{{ userStore.userDescription }}</p>
+        <p class="profile-bio">{{ userStore.currentUser?.bio }}</p>
+        <div class="profile-tags">
+          <el-tag size="small">{{ userStore.currentUser?.college }}</el-tag>
+          <el-tag size="small" type="info">{{ userStore.currentUser?.grade }}</el-tag>
         </div>
       </div>
+    </div>
 
     <!-- 我的发布 -->
     <div class="panel">
       <h2>📋 我的发布</h2>
       <p class="hint">
-        本模块用于展示当前用户发布过的信息。Day5 阶段可先完成结构展示，后续可继续与接口数据联动。
+        本模块用于展示当前用户发布过的信息。
       </p>
       <EmptyState description="我的发布功能将在后续版本中完善" />
     </div>
 
-    <!-- 我的收藏 -->
+    <!-- 我的收藏：不依赖登录状态 -->
     <div class="panel">
       <h2>⭐ 我的收藏（{{ favoriteStore.favoriteCount }}）</h2>
 
@@ -62,7 +60,6 @@
         </ItemCard>
       </div>
     </div>
-    </template>
   </section>
 </template>
 
