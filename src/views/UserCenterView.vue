@@ -1,21 +1,31 @@
 <template>
   <section class="page">
-    <!-- 个人信息卡片 -->
-    <div class="profile-card">
-      <div class="avatar">
-        {{ userStore.currentUser.avatar }}
-      </div>
+    <!-- 未登录状态 -->
+    <div v-if="!userStore.isLoggedIn" class="panel not-logged-in">
+      <div class="empty-icon">🔒</div>
+      <h1>请先登录</h1>
+      <p>登录后可以查看个人资料、我的收藏和我的发布。</p>
+      <RouterLink class="login-link" to="/login">去登录</RouterLink>
+    </div>
 
-      <div class="profile-info">
-        <h1>{{ userStore.displayName }}</h1>
-        <p class="profile-desc">{{ userStore.userDescription }}</p>
-        <p class="profile-bio">{{ userStore.currentUser.bio }}</p>
-        <div class="profile-tags">
-          <el-tag size="small">{{ userStore.currentUser.college }}</el-tag>
-          <el-tag size="small" type="info">{{ userStore.currentUser.grade }}</el-tag>
+    <!-- 已登录状态 -->
+    <template v-else>
+      <!-- 个人信息卡片 -->
+      <div class="profile-card">
+        <div class="avatar">
+          {{ userStore.currentUser?.avatar || userStore.displayName.slice(0, 1) }}
+        </div>
+
+        <div class="profile-info">
+          <h1>{{ userStore.displayName }}</h1>
+          <p class="profile-desc">{{ userStore.userDescription }}</p>
+          <p class="profile-bio">{{ userStore.currentUser?.bio }}</p>
+          <div class="profile-tags">
+            <el-tag size="small">{{ userStore.currentUser?.college }}</el-tag>
+            <el-tag size="small" type="info">{{ userStore.currentUser?.grade }}</el-tag>
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- 我的发布 -->
     <div class="panel">
@@ -52,6 +62,7 @@
         </ItemCard>
       </div>
     </div>
+    </template>
   </section>
 </template>
 
@@ -164,5 +175,42 @@ function getTypeLabel(type: string) {
 
 .remove-btn:hover {
   background: #fee2e2;
+}
+
+.not-logged-in {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.not-logged-in .empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.not-logged-in h1 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.not-logged-in p {
+  margin: 0 0 20px;
+  color: #6b7280;
+}
+
+.login-link {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background var(--transition);
+}
+
+.login-link:hover {
+  background: #1d4ed8;
 }
 </style>

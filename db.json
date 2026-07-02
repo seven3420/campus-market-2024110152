@@ -310,59 +310,34 @@
   ],
   "users": [
     {
-      "id": "1",
-      "nickname": "小王同学",
+      "id": 1,
+      "username": "student",
+      "password": "123456",
+      "name": "小王同学",
+      "college": "计算机学院",
+      "grade": "2023级",
       "avatar": "🎓",
-      "school": "计算机学院",
-      "grade": "2023级",
-      "bio": "爱分享、爱交易的校园人",
-      "publishedCount": 3,
-      "collectedCount": 5,
-      "messageCount": 8
+      "bio": "热爱校园生活，喜欢分享闲置好物。"
     },
     {
-      "id": "2",
-      "nickname": "爱打球的小张",
+      "id": 2,
+      "username": "zhang",
+      "password": "123456",
+      "name": "爱打球的小张",
+      "college": "体育学院",
+      "grade": "2022级",
       "avatar": "🏀",
-      "school": "体育学院",
-      "grade": "2022级",
-      "bio": "篮球爱好者，偶尔出闲置",
-      "publishedCount": 5,
-      "collectedCount": 3,
-      "messageCount": 12
+      "bio": "篮球爱好者，偶尔出闲置。"
     },
     {
-      "id": "3",
-      "nickname": "研二学长",
-      "avatar": "📚",
-      "school": "电子工程学院",
+      "id": 3,
+      "username": "senior",
+      "password": "123456",
+      "name": "研二学长",
+      "college": "电子工程学院",
       "grade": "2024级研",
-      "bio": "研究生在读，毕业出闲置",
-      "publishedCount": 8,
-      "collectedCount": 2,
-      "messageCount": 15
-    },
-    {
-      "id": "4",
-      "nickname": "爱吃水果的小赵",
-      "avatar": "🍒",
-      "school": "食品学院",
-      "grade": "2023级",
-      "bio": "水果拼单达人，一起更划算",
-      "publishedCount": 4,
-      "collectedCount": 6,
-      "messageCount": 5
-    },
-    {
-      "id": "5",
-      "nickname": "准备回家的阿杰",
-      "avatar": "🚗",
-      "school": "交通学院",
-      "grade": "2022级",
-      "bio": "经常往返火车站，欢迎拼车",
-      "publishedCount": 2,
-      "collectedCount": 1,
-      "messageCount": 3
+      "avatar": "📚",
+      "bio": "研究生在读，毕业出闲置。"
     }
   ],
   "conversations": [
@@ -548,6 +523,13 @@
       "text": "o1",
       "time": "2026/7/1 09:06:11",
       "id": "KVVjyEYyl9Y"
+    },
+    {
+      "conversationId": "1",
+      "senderId": 1,
+      "text": "nihao",
+      "time": "2026/7/2 09:06:32",
+      "id": "u9l6Dx4nXnU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

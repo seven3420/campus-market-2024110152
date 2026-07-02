@@ -16,22 +16,33 @@
           <span class="icon">💬</span>
         </el-badge>
       </router-link>
-      <router-link to="/user" class="action-btn user-btn">
-        <el-avatar :size="32" style="background: #5b9bd5; font-size: 16px">
-          {{ userStore.currentUser.avatar }}
-        </el-avatar>
-        <span class="user-name">{{ userStore.displayName }}</span>
-      </router-link>
+
+      <template v-if="userStore.isLoggedIn && userStore.currentUser">
+        <router-link to="/user" class="action-btn user-btn">
+          <el-avatar :size="32" style="background: #5b9bd5; font-size: 16px">
+            {{ userStore.currentUser.avatar || userStore.displayName.slice(0, 1) }}
+          </el-avatar>
+          <span class="user-name">{{ userStore.displayName }}</span>
+        </router-link>
+        <button class="logout-btn" @click="handleLogout">退出</button>
+      </template>
+
+      <template v-else>
+        <router-link to="/login" class="auth-link">登录</router-link>
+        <router-link to="/register" class="auth-link register-link">注册</router-link>
+      </template>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import AppNav from './AppNav.vue'
 import { getConversations } from '@/api/message'
 import { useUserStore } from '@/stores/user'
 
+const router = useRouter()
 const userStore = useUserStore()
 const unreadCount = ref(0)
 
@@ -43,6 +54,11 @@ onMounted(async () => {
     // 使用默认值
   }
 })
+
+function handleLogout() {
+  userStore.logout()
+  router.push('/login')
+}
 </script>
 
 <style scoped>
@@ -128,5 +144,45 @@ onMounted(async () => {
   font-size: 13px;
   color: var(--color-text-secondary);
   white-space: nowrap;
+}
+
+.auth-link {
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.auth-link:hover {
+  background: var(--color-primary-light);
+}
+
+.register-link {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 6px 16px;
+  font-weight: 500;
+}
+
+.register-link:hover {
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+
+.logout-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 13px;
+  transition: background var(--transition);
+}
+
+.logout-btn:hover {
+  background: #fee2e2;
 }
 </style>

@@ -2,23 +2,22 @@ import http from './http'
 
 /** 用户数据接口 */
 export interface User {
-  id: number
-  nickname: string
-  avatar: string
-  school: string
+  id?: number
+  username: string
+  password: string
+  name: string
+  college: string
   grade: string
+  avatar: string
   bio: string
-  publishedCount: number
-  collectedCount: number
-  messageCount: number
 }
 
-/** 获取当前用户（默认 id=1） */
-export function getCurrentUser() {
-  return http.get<User>('/users/1')
+/** 获取所有用户（登录校验用） */
+export function getUsers() {
+  return http.get<User[]>('/users')
 }
 
-/** 根据 id 获取用户信息 */
-export function getUserById(id: number) {
-  return http.get<User>(`/users/${id}`)
+/** 注册新用户 */
+export function createUser(data: User) {
+  return http.post<User>('/users', data)
 }
